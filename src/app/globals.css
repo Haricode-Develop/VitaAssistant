@@ -1,6 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{color-scheme:light}
-html,body,#__next{height:100%}
-body{background:#F8FAFC}
+
+/* ====== Vitalink Design Tokens ====== */
+:root{
+    --vlk-primary: #2563EB;      /* azul Vitalink */
+    --vlk-primary-600:#2563EB;
+    --vlk-primary-500:#3B82F6;
+    --vlk-accent:  #FF6B6B;      /* coral/rosa */
+    --vlk-ink:     #0F172A;      /* texto */
+    --vlk-bg:      #F8FAFC;      /* fondo */
+    --vlk-subtle:  #E2E8F0;      /* bordes */
+}
+
+:root { color-scheme: light; }
+html, body, #__next { height: 100%; }
+body { background: var(--vlk-bg); color: var(--vlk-ink); }
+
+/* ====== Utilidades de marca (Tailwind-friendly) ====== */
+@layer utilities{
+    .bg-vitalink-primary{ background-color: var(--vlk-primary) }
+    .text-vitalink-primary{ color: var(--vlk-primary) }
+    .bg-vitalink-bg{ background-color: var(--vlk-bg) }
+    .border-subtle{ border-color: var(--vlk-subtle) }
+    .shadow-soft{ box-shadow: 0 6px 18px rgba(2,6,23,.06) }
+    .card{ @apply rounded-2xl bg-white border border-slate-200 shadow-soft }
+}
+
+/* Mejores toques responsivos */
+@layer base{
+    *{ -webkit-tap-highlight-color: transparent; }
+}
+
+/* Scroll suave en paneles */
+.panel-scroll{ scrollbar-width: thin; scrollbar-color: #CBD5E1 transparent; }
+.panel-scroll::-webkit-scrollbar{ height: 8px; width: 8px; }
+.panel-scroll::-webkit-scrollbar-thumb{ background:#cbd5e1; border-radius: 6px; }

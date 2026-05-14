@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview:static": "npx serve@latest out -l 3000",
     "start": "next start",
     "lint": "next lint"
   },
